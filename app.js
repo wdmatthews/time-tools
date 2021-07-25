@@ -6,6 +6,9 @@ const timerActions = document.getElementById('timer-actions');
 const stopwatchStartButton = document.getElementById('stopwatch-start-button');
 const stopwatchStopButton = document.getElementById('stopwatch-stop-button');
 const stopwatchResetButton = document.getElementById('stopwatch-reset-button');
+const startAudio = new Audio('start.mp3');
+const stopAudio = new Audio('stop.wav');
+const doneAudio = new Audio('done.wav');
 
 let mode = 'stopwatch';
 let minutes = 0;
@@ -35,6 +38,7 @@ stopwatchButton.onclick = function () {
 
 stopwatchStartButton.onclick = function () {
   if (stopwatchInterval) return;
+  startAudio.play();
   stopwatchInterval = setInterval(function () {
     seconds++;
     
@@ -49,6 +53,7 @@ stopwatchStartButton.onclick = function () {
 
 stopwatchStopButton.onclick = function () {
   if (!stopwatchInterval) return;
+  stopAudio.play();
   clearInterval(stopwatchInterval);
   stopwatchInterval = null;
 };
