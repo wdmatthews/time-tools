@@ -6,6 +6,8 @@ const timerActions = document.getElementById('timer-actions');
 const stopwatchStartButton = document.getElementById('stopwatch-start-button');
 const stopwatchStopButton = document.getElementById('stopwatch-stop-button');
 const stopwatchResetButton = document.getElementById('stopwatch-reset-button');
+const timerStartButton = document.getElementById('timer-start-button');
+const timerStopButton = document.getElementById('timer-stop-button');
 const startAudio = new Audio('start.mp3');
 const stopAudio = new Audio('stop.wav');
 const doneAudio = new Audio('done.wav');
@@ -14,6 +16,7 @@ let mode = 'stopwatch';
 let minutes = 0;
 let seconds = 0;
 let stopwatchInterval = null;
+let timerInterval = null;
 
 timeInput.onchange = function () {
   const [min, sec] = timeInput.value.split(':');
@@ -80,4 +83,31 @@ timerButton.onclick = function () {
   if (stopwatchButton.classList.contains('active')) {
     stopwatchButton.classList.remove('active');
   }
+};
+
+timerStartButton.onclick = function () {
+  if (timerInterval || !minutes && !seconds) return;
+  timerInterval = setInterval(function () {
+    seconds--;
+    
+    if (seconds < 0) {
+      minutes--;
+      seconds = 59;
+    }
+    
+    if (minutes == 0 && seconds == 0) {
+      doneAudio.play();
+      clearInterval(timerInterval);
+      timerInterval = null;
+    }
+    
+    timeInput.value = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+  }, 1000);
+};
+
+timerStopButton.onclick = function () {
+  if (!timerInterval) return;
+  doneAudio.play();
+  clearInterval(timerInterval);
+  timerInterval = null;
 };
