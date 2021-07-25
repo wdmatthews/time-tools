@@ -1,0 +1,94 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-image: url('background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  color: white;
+  font-family: 'Capriola', sans-serif;
+}
+
+#mode {
+  position: fixed;
+  translate: -50% 0px;
+  left: 50%;
+  top: 16px;
+  font-size: 0px;
+  text-align: center;
+  user-select: none;
+}
+
+#mode span {
+  opacity: 0.8;
+  cursor: pointer;
+  padding: 16px;
+  font-size: 2rem;
+}
+
+#mode span:hover,
+#mode span.active {
+  opacity: 1;
+}
+
+#time-input {
+  position: fixed;
+  translate: -50% -50%;
+  left: 50%;
+  top: 50%;
+  padding: 16px;
+  max-width: 100%;
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10rem;
+  text-align: center;
+}
+#time-input:focus { outline: none; }
+
+#stopwatch-actions,
+#timer-actions {
+  position: fixed;
+  translate: -50% -50%;
+  left: 50%;
+  top: calc(50% + 10rem);
+  font-size: 0px;
+  text-align: center;
+}
+
+#stopwatch-actions button,
+#timer-actions button {
+  padding: 16px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-family: 'Capriola', sans-serif;
+  font-size: 1.5rem;
+  opacity: 0.8;
+}
+#stopwatch-actions button:hover,
+#timer-actions button:hover {
+  opacity: 1;
+}
+
+#timer-actions {
+  display: none;
+}
+
+#credits {
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
+  user-select: none;
+}

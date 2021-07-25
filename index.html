@@ -1,16 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Time Tools</title>
+  <title>time-input Tools</title>
+  
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <link href="https://fonts.googleapis.com/css2?family=Capriola&family=Poppins&display=swap" rel="stylesheet">
-  <style>
-    
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div id="mode">
+    <span
+      id="stopwatch-button"
+      class="active"
+    >Stopwatch</span>
+    <span
+      id="timer-button"
+    >Timer</span>
+  </div>
   
+  <input
+    id="time-input"
+    type="text"
+    placeholder="0:00"
+    value="0:00"
+    disabled
+  >
+  
+  <div id="stopwatch-actions">
+    <button id="stopwatch-start-button">
+      Start
+    </button>
+    <button id="stopwatch-stop-button">
+      Stop
+    </button>
+    <button id="stopwatch-reset-button">
+      Reset
+    </button>
+  </div>
+  
+  <div id="timer-actions">
+    
+  </div>
+  
+  <div id="credits">
+    <h3>Credits</h3>
+    <p>Background Image: EggRollGame</p>
+    <p>Stopwatch Audio: Tim Beek</p>
+    <p>Timer Audio: Dustyroom</p>
+  </div>
+  
+  <script src="app.js"></script>
 </body>
 </html>
