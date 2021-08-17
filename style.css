@@ -20,7 +20,7 @@ body {
 
 #mode {
   position: fixed;
-  transform: translate(-50% 0px);
+  transform: translate(-50%, 0px);
   left: 50%;
   top: 16px;
   font-size: 0px;
@@ -42,7 +42,7 @@ body {
 
 #time-input {
   position: fixed;
-  transform: translate(-50% -50%);
+  transform: translate(-50%, -50%);
   left: 50%;
   top: 50%;
   padding: 16px;
@@ -59,7 +59,7 @@ body {
 #stopwatch-actions,
 #timer-actions {
   position: fixed;
-  transform: translate(-50% -50%);
+  transform: translate(-50%, -50%);
   left: 50%;
   top: calc(50% + 10rem);
   font-size: 0px;
